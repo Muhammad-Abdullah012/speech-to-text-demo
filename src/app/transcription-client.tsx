@@ -120,12 +120,12 @@ export default function TranscriptionClient() {
   };
 
   return (
-    <div className="max-w-xl w-full flex flex-col gap-6 items-center text-center">
-      <div className="flex gap-4">
+    <div className="max-w-xl w-full flex flex-col gap-6 items-center text-center px-4 sm:px-0">
+      <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
         <button
           onClick={startListening}
           disabled={isListening || isLoading}
-          className="px-6 py-3 rounded-full bg-green-600 text-white text-sm font-medium hover:bg-green-700 disabled:opacity-50 transition-all"
+          className="w-full sm:w-auto px-6 py-3 rounded-full bg-green-600 text-white text-sm font-medium hover:bg-green-700 disabled:opacity-50 transition-all"
         >
           ▶️ Start Listening
         </button>
@@ -133,7 +133,7 @@ export default function TranscriptionClient() {
         <button
           onClick={stopListening}
           disabled={!isListening}
-          className="px-6 py-3 rounded-full bg-red-600 text-white text-sm font-medium hover:bg-red-700 disabled:opacity-50 transition-all"
+          className="w-full sm:w-auto px-6 py-3 rounded-full bg-red-600 text-white text-sm font-medium hover:bg-red-700 disabled:opacity-50 transition-all"
         >
           ⏹️ Stop Listening
         </button>
@@ -141,7 +141,7 @@ export default function TranscriptionClient() {
         <button
           onClick={clearTranscript}
           disabled={!transcript}
-          className="px-6 py-3 rounded-full bg-gray-500 text-white text-sm font-medium hover:bg-gray-600 disabled:opacity-50 transition-all"
+          className="w-full sm:w-auto px-6 py-3 rounded-full bg-gray-500 text-white text-sm font-medium hover:bg-gray-600 disabled:opacity-50 transition-all"
         >
           🧹 Clear
         </button>
@@ -152,14 +152,14 @@ export default function TranscriptionClient() {
         onChange={(e) => setTranscript(e.target.value)}
         rows={10}
         readOnly
-        className="w-full p-4 border border-gray-300 rounded-lg text-sm font-mono shadow-sm focus:outline-none focus:ring-2 focus:ring-black"
+        className="w-full p-4 border border-gray-300 rounded-lg text-sm font-mono shadow-sm focus:outline-none focus:ring-2 focus:ring-black resize-none"
         placeholder="Live transcription will appear here..."
       />
 
       <button
         onClick={downloadTranscript}
         disabled={!transcript}
-        className="px-6 py-3 rounded-full bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 disabled:opacity-50 transition-all"
+        className="w-full sm:w-auto px-6 py-3 rounded-full bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 disabled:opacity-50 transition-all"
       >
         💾 Download Transcript
       </button>
